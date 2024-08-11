@@ -1,0 +1,38 @@
+EDA - FICHA 1
+Versão Iterativa
+ public static int fatorial(int num){
+       int f =1; 
+       for (int i = 0; i < num; i++) { 
+           f = f*i;
+       }
+       return f;
+   }
+
+1 (int f = 1) + 1 (int i) +  N+1 ( i < num)(N comparações mais 1 condição de saida da comparação) + N + N (i++)(N somas mais N atribuições) + N +N (N multiplicações mais N atribuições) + 1 (return f)
+
+-> 5N+4
+-> O(N) - Complexidade Temporal Linear 
+
+1 (int num) + 1 (int f) + 1 (int i)(vairáveis entre ciclos contam só uma vez) + 1 (return)
+
+-> 4
+-> S(1) -Complexidade Espacial Constante
+
+---------------------------
+
+Versão Recursiva
+  public static int fatorialR(int num){
+       if (num == 0)
+           return 1;
+       else return num*fatorialR(num-1);
+   }
+
+N+1 (num == 0) (comparação que vai passar n vezes) + 1 (return 1) (condição de saída da recursividade) + N (return num*fatorialR(num-1)) (é executada n vezes o else até o num ser 0)  
+
+-> 4N+2
+-> O(N) - Complexidade Temporal Linear 
+
+2 (int num) + (N+1) (returns)
+
+-> 2N+2
+-> S(N) -Complexidade Espacial Linear
